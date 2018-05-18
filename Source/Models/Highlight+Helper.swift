@@ -278,6 +278,26 @@ extension Highlight {
         }
     }
     
+    
+    /// Return a Highlight by ID
+    ///
+    /// - Parameter:
+    ///   - readerConfig: Current folio reader configuration.
+    ///   - highlightId: The ID to be removed
+    ///   - page: Page number
+    /// - Returns: Return a Highlight
+    public static func getById(withConfiguration readerConfig: FolioReaderConfig, highlightId: String) -> Highlight {
+        var highlight: Highlight?
+        let predicate = NSPredicate(format:"highlightId = %@", highlightId)
+        do {
+            let realm = try! Realm(configuration: readerConfig.realmConfiguration)
+            highlight = realm.objects(Highlight.self).filter(predicate).toArray(Highlight.self).first
+            return highlight!
+        } catch let error as NSError {
+            print("Error getting Highlight : \(error)")
+        }
+    }
+
     /**
      Remove span tag before store the highlight, this span is added on JavaScript.
      <span class=\"sentence\"></span>
