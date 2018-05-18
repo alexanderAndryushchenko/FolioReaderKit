@@ -313,6 +313,16 @@ open class FolioReaderCenter: UIViewController, UICollectionViewDelegate, UIColl
         currentPageNumber = pageNumber
     }
 
+    //MARK: Present add highlight note
+    func presentAddHighlightNote(_ highlight: Highlight, edit: Bool) {
+        let addHighlightView = FolioReaderAddHighlightNote(withHighlight: highlight, folioReader: folioReader, readerConfig: readerConfig)
+        addHighlightView.isEditHighlight = edit
+        let nav = UINavigationController(rootViewController: addHighlightView)
+        nav.modalPresentationStyle = .formSheet
+        
+        present(nav, animated: true, completion: nil)
+    }
+    
     // MARK: Change page progressive direction
 
     private func transformViewForRTL(_ view: UIView?) {
