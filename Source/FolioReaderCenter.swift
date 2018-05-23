@@ -265,6 +265,8 @@ open class FolioReaderCenter: UIViewController, UICollectionViewDelegate, UIColl
         let closeIcon = UIImage(readerImageNamed: "icon-navbar-close")?.ignoreSystemTint(withConfiguration: self.readerConfig)
         let tocIcon = UIImage(readerImageNamed: "icon-navbar-toc")?.ignoreSystemTint(withConfiguration: self.readerConfig)
         let fontIcon = UIImage(readerImageNamed: "icon-navbar-font")?.ignoreSystemTint(withConfiguration: self.readerConfig)
+        let searchIcon = UIImage(readerImageNamed: "icon-navbar-search")?.ignoreSystemTint(withConfiguration: self.readerConfig)
+        
         let space = 70 as CGFloat
 
         let menu = UIBarButtonItem(image: closeIcon, style: .plain, target: self, action:#selector(closeReader(_:)))
@@ -284,8 +286,11 @@ open class FolioReaderCenter: UIViewController, UICollectionViewDelegate, UIColl
 
         let font = UIBarButtonItem(image: fontIcon, style: .plain, target: self, action: #selector(presentFontsMenu))
         font.width = space
-
-        rightBarIcons.append(contentsOf: [font])
+        
+        if (self.readerConfig.allowSearching == true) {
+            rightBarIcons.append(UIBarButtonItem(image: searchIcon, style: .plain, target: self, action:#selector(searchBook(_:))))
+        }
+        
         navigationItem.rightBarButtonItems = rightBarIcons
         
         if(self.readerConfig.displayTitle){
@@ -1050,6 +1055,18 @@ open class FolioReaderCenter: UIViewController, UICollectionViewDelegate, UIColl
 
     func audioMark(href: String, fragmentID: String) {
         changePageWith(href: href, andAudioMarkID: fragmentID)
+    }
+    
+    // MARK: - Searching
+    
+    /**
+     Search book method.
+     */
+    
+    @objc func searchBook(_ sender: UIBarButtonItem) {
+        let searchController = FolioReaderSearchViewController(withReaderConfig: readerConfig, folioReader: folioReader)
+        let navController = UINavigationController(rootViewController: searchController)
+        present(navController, animated: true)
     }
 
     // MARK: - Sharing

@@ -204,6 +204,12 @@ internal extension UIColor {
 }
 
 internal extension String {
+    
+    func nsRange(from range: Range<Index>) -> NSRange {
+        return NSRange(range, in: self)
+    }
+    
+    
     /// Truncates the string to length number of characters and
     /// appends optional trailing string if longer
     func truncate(_ length: Int, trailing: String? = nil) -> String {

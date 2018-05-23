@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 import RealmSwift
 
 // MARK: - FolioReaderScrollDirection
@@ -138,6 +137,15 @@ open class FolioReaderConfig: NSObject {
     /// Allow sharing option, if `false` will hide all sharing icons and options
     open var allowSharing = true
 
+    /// Allow searching option, if `false` will hide all search icons and options
+    open var allowSearching = true
+    
+    /// Search controller title
+    open var localizedSearchControllerTitle = NSLocalizedString("Search Book", comment: "")
+    
+    /// Search controller search bar placeholder
+    open var localizedSearchControllerPlaceholder = NSLocalizedString("Search Book", comment: "")
+    
     /// Enable TTS (Text To Speech)
     open var enableTTS = true
     

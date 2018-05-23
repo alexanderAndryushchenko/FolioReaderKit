@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1198267E20AEB9BF0081983F /* FolioReaderAddHighlightNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1198267D20AEB9BF0081983F /* FolioReaderAddHighlightNote.swift */; };
+		11B3F3CE20B5B54800A0F3B9 /* FRSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3F3CD20B5B54800A0F3B9 /* FRSearchResult.swift */; };
+		11B3F3D020B5B57B00A0F3B9 /* FolioReaderSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B3F3CF20B5B57B00A0F3B9 /* FolioReaderSearchViewController.swift */; };
 		1A41E8912031E22300A8F70C /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A41E8902031E22300A8F70C /* MediaType.swift */; };
 		1A65DDCC1DA73F8E0033C277 /* MenuItemKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A65DDCB1DA73F8D0033C277 /* MenuItemKit.framework */; };
 		1A65DDD21DA744190033C277 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A65DDD01DA744190033C277 /* Realm.framework */; };
@@ -122,6 +124,8 @@
 
 /* Begin PBXFileReference section */
 		1198267D20AEB9BF0081983F /* FolioReaderAddHighlightNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolioReaderAddHighlightNote.swift; sourceTree = "<group>"; };
+		11B3F3CD20B5B54800A0F3B9 /* FRSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FRSearchResult.swift; sourceTree = "<group>"; };
+		11B3F3CF20B5B57B00A0F3B9 /* FolioReaderSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolioReaderSearchViewController.swift; sourceTree = "<group>"; };
 		1A41E8902031E22300A8F70C /* MediaType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
 		1A65DDCB1DA73F8D0033C277 /* MenuItemKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MenuItemKit.framework; path = Carthage/Build/iOS/MenuItemKit.framework; sourceTree = "<group>"; };
 		1A65DDD01DA744190033C277 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -260,6 +264,8 @@
 				1A958F241D397BE900D56699 /* PageViewController.swift */,
 				1A65DDD41DA744410033C277 /* QuoteImage.swift */,
 				1A958F901D397BE900D56699 /* ScrollScrubber.swift */,
+				11B3F3CD20B5B54800A0F3B9 /* FRSearchResult.swift */,
+				11B3F3CF20B5B57B00A0F3B9 /* FolioReaderSearchViewController.swift */,
 			);
 			path = Source;
 			sourceTree = SOURCE_ROOT;
@@ -580,11 +586,13 @@
 				3AD5EEB91D9433C100E42810 /* FolioReaderWebView.swift in Sources */,
 				1A958FA41D397BE900D56699 /* FolioReaderKit.swift in Sources */,
 				1A65DDD71DA7450A0033C277 /* FolioReaderQuoteShare.swift in Sources */,
+				11B3F3CE20B5B54800A0F3B9 /* FRSearchResult.swift in Sources */,
 				3A27F08C1FD9BE5800D84A57 /* FolioReaderUserDefaults.swift in Sources */,
 				1A958FA21D397BE900D56699 /* FolioReaderHighlightList.swift in Sources */,
 				1198267E20AEB9BF0081983F /* FolioReaderAddHighlightNote.swift in Sources */,
 				1A958FA71D397BE900D56699 /* FolioReaderPlayerMenu.swift in Sources */,
 				1A958F921D397BE900D56699 /* FREpubParser.swift in Sources */,
+				11B3F3D020B5B57B00A0F3B9 /* FolioReaderSearchViewController.swift in Sources */,
 				1A958F9C1D397BE900D56699 /* FolioReaderCenter.swift in Sources */,
 				1A958FAE1D397BE900D56699 /* PageViewController.swift in Sources */,
 				1A958FAD1D397BE900D56699 /* Highlight.swift in Sources */,
