@@ -83,7 +83,8 @@ class FolioReaderSearchViewController: UITableViewController {
             self.folioReader.readerCenter?.changePageWith(href: result.resource.href, animated: false) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     let webView = self.folioReader.readerCenter?.currentPage?.webView
-                    webView?.highlight(string: result.searchString, withId: result.resource.id)
+                    // TODO: - Remove force
+                    webView?.highlight(string: (result.resultString?.string)!, withId: result.resource.id)
                 }
                 
             }
