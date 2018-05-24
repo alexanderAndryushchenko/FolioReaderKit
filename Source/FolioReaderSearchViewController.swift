@@ -147,7 +147,7 @@ extension FolioReaderSearchViewController {
         searchBar.barStyle = folioReader.isNight(.black, .default)
         navBar?.barTintColor = navBackground
         navBar?.isTranslucent = false
-        navBar?.titleTextAttributes = [NSForegroundColorAttributeName: tintColor, NSFontAttributeName: font]
+        navBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: tintColor, NSAttributedStringKey.font: font]
     }
     
     func configureNavBarButtons() {
@@ -209,7 +209,7 @@ extension FolioReaderSearchViewController {
         var results: [FRSearchResult] = []
         
         for pageNumber in 0..<totalPages {
-            let resource = book.spine.spineReferences[pageNumber].resource!
+            let resource = book.spine.spineReferences[pageNumber].resource
             let href = resource.href
             
             guard let htmlString = try? String(contentsOfFile: resource.fullHref, encoding: .utf8).stripHtml() else { continue }
@@ -222,3 +222,4 @@ extension FolioReaderSearchViewController {
     }
     
 }
+

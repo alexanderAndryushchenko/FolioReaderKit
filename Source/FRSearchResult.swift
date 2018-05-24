@@ -24,15 +24,19 @@ struct FRSearchResult {
         let offsetUpper = htmlString.index(upper, offsetBy: 30, limitedBy: htmlString.endIndex) ?? upper
         
         // TODO: - Refactor remove force
-        let originalString = String(htmlString[lower..<upper])!
-        let offsetString = String(htmlString[lower..<offsetUpper])!
+        //        let originalString = String(String(htmlString[lower..<upper]))!
+        //        let offsetString = String(String(htmlString[lower..<offsetUpper]))!
+        
+        let originalString = String.init(htmlString[lower..<upper])
+        let offsetString = String.init(htmlString[lower..<offsetUpper])
         
         guard let originalRangeInOffsetString = offsetString.range(of: originalString) else { return nil }
         
-        let resultString = NSMutableAttributedString(string: offsetString, attributes: [NSForegroundColorAttributeName: UIColor.gray, NSFontAttributeName: UIFont.systemFont(ofSize: 16)])
-        resultString.addAttributes([NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: UIFont.boldSystemFont(ofSize: 17)], range: originalString.nsRange(from: originalRangeInOffsetString))
+        let resultString = NSMutableAttributedString(string: offsetString, attributes: [NSAttributedStringKey.foregroundColor: UIColor.gray, NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)])
+        resultString.addAttributes([NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)], range: originalString.nsRange(from: originalRangeInOffsetString))
         
         return resultString
     }
     
 }
+
